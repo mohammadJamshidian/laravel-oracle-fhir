@@ -38,7 +38,7 @@ class OracleFhirServiceProvider extends ServiceProvider
             Route::prefix($prefix)
                 ->middleware($middleware)
                 ->group(function () {
-                    Route::get('/jwks/{clientId}', [UserController::class, 'jwks'])->name('OracleFhir.jwks');
+                    Route::get('/jwks/{clientId?}', [UserController::class, 'jwks'])->name('OracleFhir.jwks');
                     Route::get('/smart/launch/{clientId}', [UserController::class, 'smartLaunch'])->name('OracleFhir.smart.launch');
                     Route::get('/smart/callback', [UserController::class, 'smartCallback'])->name('OracleFhir.smart.callback');
                 });
